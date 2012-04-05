@@ -1,0 +1,21 @@
+%h1 Room
+
+%p
+  %strong= t("activerecord.attributes.room.area_size", :default => t("activerecord.labels.area_size", :default => "Area size")) + ":"
+  %br
+  = @room.area_size
+%p
+  %strong= t("activerecord.attributes.room.beds", :default => t("activerecord.labels.beds", :default => "Beds")) + ":"
+  %br
+  = @room.beds
+%p
+  %strong= t("activerecord.attributes.room.flat_id", :default => t("activerecord.labels.flat_id", :default => "Flat")) + ":"
+  %br
+  = @room.flat_id
+
+.form-actions
+  = link_to "Back", rooms_path, :class => 'btn'
+  = link_to "Edit", edit_room_path(@room), :class => 'btn'
+  = link_to "Delete", room_path(@room), :method => "delete", :confirm => "Are you sure?", :class => 'btn btn-danger'
+
+

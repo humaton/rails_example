@@ -35,6 +35,7 @@ class FlatsController < ApplicationController
 
   # GET /flats/1/edit
   def edit
+    @users = User.all
     @flat = Flat.find(params[:id])
   end
 

@@ -1,0 +1,20 @@
+%h1 Rooms
+%table.table.table-striped
+  %thead
+    %tr
+      %th ID
+      %th
+        = t("activerecord.attributes.room.area_size", :default => t("activerecord.labels.area_size", :default => "Area size"))
+      %th Created at
+      %th Actions
+  %tbody
+    - @rooms.each do |room|
+      %tr
+        %td= room.id
+        %td= link_to room.area_size, flat_room_path(room.flat_id,room)
+        %td= room.created_at
+        %td
+          = link_to "Edit", edit_flat_room_path(room.id, room), :class => 'btn btn-mini'
+          = link_to "Destroy", flat_room_path(room.flat_id, room), :method => :delete, :confirm => "Are you sure?", :class => 'btn btn-mini btn-danger'
+
+= link_to "New", new_flat_room_path(@flat), :class => 'btn btn-primary'

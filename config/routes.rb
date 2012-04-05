@@ -1,5 +1,7 @@
 RailsExample::Application.routes.draw do
-  resources :flats
+  resources :flats do
+    resources :rooms
+  end
 
   devise_for :users
 

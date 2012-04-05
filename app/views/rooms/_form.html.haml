@@ -1,0 +1,16 @@
+= form_for @room, :url=>flat_rooms_path(@flat), :html => { :class => 'form-horizontal' } do |f|
+  %fieldset
+    %legend
+      = controller.action_name.capitalize
+      Room
+    .control-group
+      = f.label :area_size, :class => 'control-label'
+      .controls
+        = f.number_field :area_size, :class => 'number_field'
+    .control-group
+      = f.label :beds, :class => 'control-label'
+      .controls
+        = f.number_field :beds, :class => 'number_field'
+    .form-actions
+      = f.submit nil, :class => 'btn btn-primary'
+      = link_to "Cancel", flat_rooms_path(@flat), :class => 'btn'

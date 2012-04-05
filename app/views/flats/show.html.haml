@@ -6,6 +6,7 @@
   = @flat.name
 
 .form-actions
+  = link_to "Rooms", flat_rooms_path(@flat), :class => 'btn'
   = link_to "Back", flats_path, :class => 'btn'
   = link_to "Edit", edit_flat_path(@flat), :class => 'btn'
   = link_to "Delete", flat_path(@flat), :method => "delete", :confirm => "Are you sure?", :class => 'btn btn-danger'
