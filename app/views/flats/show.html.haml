@@ -1,0 +1,13 @@
+%h1 Flat
+
+%p
+  %strong= t("activerecord.attributes.flat.name", :default => t("activerecord.labels.name", :default => "Name")) + ":"
+  %br
+  = @flat.name
+
+.form-actions
+  = link_to "Back", flats_path, :class => 'btn'
+  = link_to "Edit", edit_flat_path(@flat), :class => 'btn'
+  = link_to "Delete", flat_path(@flat), :method => "delete", :confirm => "Are you sure?", :class => 'btn btn-danger'
+
+

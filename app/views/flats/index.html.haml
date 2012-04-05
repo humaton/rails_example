@@ -1,0 +1,20 @@
+%h1 Flats
+%table.table.table-striped
+  %thead
+    %tr
+      %th ID
+      %th
+        = t("activerecord.attributes.flat.name", :default => t("activerecord.labels.name", :default => "Name"))
+      %th Created at
+      %th Actions
+  %tbody
+    - @flats.each do |flat|
+      %tr
+        %td= flat.id
+        %td= link_to flat.name, flat_path(flat)
+        %td= flat.created_at
+        %td
+          = link_to "Edit", edit_flat_path(flat), :class => 'btn btn-mini'
+          = link_to "Destroy", flat_path(flat), :method => :delete, :confirm => "Are you sure?", :class => 'btn btn-mini btn-danger'
+
+= link_to "New", new_flat_path, :class => 'btn btn-primary'
